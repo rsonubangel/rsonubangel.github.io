@@ -25,6 +25,32 @@
     transform: scale(1.1, 1.1);
     -webkit-transform: scale(1.1, 1.1);
 }
+.scale-1\.1{
+    transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+
+.separator::before {
+    margin-right: .25em;
+}
+
+.separator::after {
+    margin-left: .25em;
+}
+
 /* Small (sm) */
 @media (min-width: 640px) {
     /* ... */
@@ -35,6 +61,11 @@
    .md\:scale-1\.5{
         transform: scale(1.5, 1.5);
         -webkit-transform: scale(1.5, 1.5);
+   }
+
+   .md\:scale-1\.1:hover {
+       transform: scale(1.1, 1.1);
+       -webkit-transform: scale(1.1, 1.1);
    }
 }
 
