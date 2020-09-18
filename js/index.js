@@ -31,3 +31,28 @@ function scrollToId(id){
     });
 }
 
+async function sendEmail(name, email, message) {
+    await Email.send({
+        Host: "smtp.gmail.com",
+        Username: "rsonubangel@gmail.com",
+        Password: "hnnwyncheqgwsgql",
+        To: 'rsonubangel@gmail.com',
+        From: "rsonubangel@gmail.com",
+        Subject: "Rsonu Bangel Query from " + name,
+        Body: "email : " + email + "<br> message : " + message,
+    });
+}
+
+async function sendMessage() {
+    var name = document.getElementById('sname').value;
+    var email = document.getElementById('semail').value;
+    var message = document.getElementById('smessage').value;
+    try {
+        await sendEmail(name, email, message);
+        document.getElementById('sname').value = "";
+        document.getElementById('semail').value = "";
+        document.getElementById('smessage').value = "";
+    } catch (error) {
+        alert(error + 'error occured send again');
+    }
+}
